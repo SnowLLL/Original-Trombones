@@ -1,0 +1,239 @@
+* {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: rgb(235,235,235);
+}
+
+/*flexbox set in Contaioner*/
+#header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: rgb(235,235,235);
+	z-index: 1;
+	padding: 1.5rem 2.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#header-img {
+	width: 19rem;
+}
+
+#nav-bar {
+	text-align: right;
+}
+
+.nav-link {
+	padding-right: 4rem;
+	white-space: nowrap;
+	color: black;
+	text-decoration: none;
+}
+
+h1 {
+	margin-top: 8rem;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+form {
+	text-align: center;
+	line-height: 3.5rem;
+}
+
+#email, #submit {
+	height: 2rem;
+}
+
+#email {
+	width: 16rem;
+}
+
+#submit, .button {
+	background-color: #f1c40f;
+	border-color: transparent;
+	border-radius: 3px;
+	font-size: 1rem;
+}
+
+#submit {
+	width: 9rem;
+	font-weight: 700;
+}
+
+#submit:hover, .button:hover {
+	background-color: orange;
+}
+
+i {
+	color: orange;
+	font-size: 3rem;
+}
+
+#features {
+	width: 70%;
+	margin: 4rem auto;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1.2fr 5fr;
+	/*justify-content: center;*/
+	grid-template-areas: 
+		'firstIcon premiumMaterials'
+		'secondIcon fastShipping'
+		'thirdIcon qualityAssurance';
+	align-items: center;
+}
+
+#first {
+	grid-area: firstIcon;
+}
+
+#second {
+	grid-area: secondIcon;
+}
+
+#third {
+	grid-area: thirdIcon;
+}
+
+#premium {
+	grid-area: premiumMaterials;
+}
+
+#fast {
+	grid-area: fastShipping;
+}
+
+#quality {
+	grid-area: qualityAssurance;
+}
+
+#first, #second, #third  {
+	margin: 0 auto;
+} 
+
+iframe {
+	max-width: 580px;
+	display: block;
+	margin: 4rem auto;
+}
+
+#pricing {
+	margin-bottom: 4rem;
+	text-align: center;
+	line-height: 1.7;
+	display: flex;
+	justify-content: center;
+}
+
+#tenor, #bass, #valve {
+	width: calc (100% / 3);
+	border: 1px solid black;
+	border-radius: 3px; 
+	margin: 10px;
+	/*set flex-basis: 300px so as to keep a square when flex */
+	flex: 0 0 300px;
+}
+
+h3 {
+	margin: 0;
+	font-size: 1rem;
+	padding: 0.8rem;
+	background-color: rgb(220,220,220);
+}
+
+p {
+	font-size: 1rem;
+}
+
+.button {
+	width: 6rem;
+	height: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+footer {
+	width: 70%;
+	margin: 0 auto;
+	color: rgb(70,70,70);
+	text-align: right;
+	background-color: rgb(220,220,220);
+	padding: 0.9rem;
+}
+
+footer a {
+	color: black;
+	text-decoration: none;
+	padding: 0.8rem;
+}
+
+footer p {
+	margin-bottom: 0.3rem;
+	margin-top: 0.25rem;
+}
+
+@media screen and (max-width: 1000px){
+	#header {
+		align-items: center;
+	}
+
+	#nav-bar {
+		padding-left: 5rem;
+	}
+
+	.nav-link {
+		display: block;
+		text-align: center;
+		padding: 0.20rem;
+	}
+
+	h1 {
+		margin-top: 10rem;
+	}
+
+	#pricing {
+		max-width: 300px;
+		width: 100%;
+		flex-direction: column;
+		margin: 0 auto;
+	}
+
+	footer {
+		margin-top: 4rem;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	#header {
+		padding: 0;
+		padding-top: 1.5rem;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	#nav-bar {
+		padding: 0;
+	}
+
+	 #first, #second, #third {
+		display: none;
+	}
+
+
+	#features {
+		/*!!! must set flext or it will occupy the space*/
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;		
+	}
+}
